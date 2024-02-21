@@ -2,7 +2,10 @@
   <header class="green-header">
     <div class="header-container">
       <span class='username' v-if="username">{{ username }}</span>
-      <span v-if="!username"><SigninButton @signin-success="onSignInSuccess" /></span>
+      <span v-else>
+        <SigninButton @signin-success="onSignInSuccess" />
+        <button @click="loginWithGoogle" class="google-login-button">Login with Google</button>
+      </span>
     </div>
   </header>
 </template>
@@ -20,6 +23,10 @@ export default {
     onSignInSuccess(username) {
       this.$emit('set-username', username);
     },
+    loginWithGoogle() {
+      // Rediriger vers la page de connexion Google
+      window.location.href = "/auth/google"; // À remplacer par l'URL de votre backend pour l'authentification Google
+    }
   },
 };
 </script>
