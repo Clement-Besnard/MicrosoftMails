@@ -1,9 +1,8 @@
 <template>
   <div>
     <header>
-
       <h1>VueJS test robotron</h1>
-</header>
+    </header>
     <main>
       <slot></slot>
     </main>
