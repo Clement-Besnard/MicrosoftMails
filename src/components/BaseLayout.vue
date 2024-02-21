@@ -1,7 +1,7 @@
 <template>
   <div>
     <header>
-      <h1>VueJS (TP4)</h1>
+      <h1>VueJS test</h1>
     </header>
 
     <main>
