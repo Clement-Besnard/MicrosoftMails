@@ -1,0 +1,25 @@
+<template>
+  <header class="green-header">
+    <div class="header-container">
+      <span class='username' v-if="username">{{ username }}</span>
+      <span v-if="!username"><SigninButton @signin-success="onSignInSuccess" /></span>
+    </div>
+  </header>
+</template>
+
+<script>
+import SigninButton from "@/components/SigninButton.vue";
+
+export default {
+  name: "HomePage",
+  components: {
+    SigninButton,
+  },
+  props: ['username'],
+  methods: {
+    onSignInSuccess(username) {
+      this.$emit('set-username', username);
+    },
+  },
+};
+</script>

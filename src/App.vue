@@ -1,0 +1,84 @@
+<template>
+  <BaseLayout>
+    <HomePage :username="username" @set-username="setUsername" />
+  </BaseLayout>
+</template>
+
+<script>
+import BaseLayout from "@/components/BaseLayout.vue";
+import HomePage from "@/components/HomePage.vue";
+
+export default {
+  name: "App",
+  components: {
+    BaseLayout,
+    HomePage,
+  },
+  data() {
+    return {
+      username: null,
+    };
+  },
+  methods: {
+    setUsername(username) {
+      this.username = username;
+    },
+  },
+};
+</script>
+
+
+
+
+
+<style>
+body {
+  margin: 0;
+}
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+
+}
+
+.green-header {
+  background-color: #035d03; 
+  padding: 15px;
+  position: fixed;
+  color: #ffffff; 
+  width: 100%;
+  top: 0;
+  z-index: 1; /* Modifier cette valeur pour éviter de masquer le bouton */
+}
+
+
+h1 {
+  padding-left: 10px;
+  color: #ffffff;
+  position: relative;
+  z-index: 2;
+  max-width: 10%;
+  
+}
+
+
+.signinbutton{
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 100px;
+  z-index: 100;
+}
+
+
+.username{
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 100px;
+  margin:15px;
+  z-index: 100;
+}
+
+</style>
