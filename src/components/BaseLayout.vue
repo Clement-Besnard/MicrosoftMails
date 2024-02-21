@@ -1,7 +1,7 @@
 <template>
   <div>
     <header>
-      <h1>VueJS test robotron</h1>
+      <h1>VueJS test bob</h1>
     </header>
     <main>
       <slot></slot>
