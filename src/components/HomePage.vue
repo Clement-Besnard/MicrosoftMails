@@ -4,7 +4,6 @@
       <span class='username' v-if="username">{{ username }}</span>
       <span v-else>
         <SigninButton @signin-success="onSignInSuccess" />
-        <button @click="loginWithGoogle" class="google-login-button">Login with Google</button>
       </span>
     </div>
   </header>
