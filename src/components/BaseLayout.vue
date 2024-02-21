@@ -2,7 +2,7 @@
   <div>
     <header>
 
-      <h1>VueJS test</h1>
+      <h1>VueJS test robotron</h1>
 </header>
     <main>
       <slot></slot>
