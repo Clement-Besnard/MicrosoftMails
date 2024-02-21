@@ -28,9 +28,12 @@ export default {
       }
     },
     loginWithGoogle() {
-      // Rediriger vers la page de connexion Google
-      window.location.href = "/auth/google"; // Remplacez cela avec l'URL de votre backend pour l'authentification Google
-    },
+    // Construire l'URL d'authentification Google avec votre clé API
+    const googleAuthUrl = `https://accounts.google.com/o/oauth2/v2/auth?response_type=code&scope=email%20profile&redirect_uri=http://localhost:8080/auth/google/callback&client_id=AIzaSyAcNDU8kdX7FR-34L2AIq7uazwS0a_aeMg`;
+
+    // Rediriger vers l'URL d'authentification Google
+    window.location.href = googleAuthUrl;
+  },
   },
 };
 </script>
