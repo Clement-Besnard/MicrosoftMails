@@ -1,8 +1,9 @@
 <template>
   <div>
     <header>
-      <h1>VueJS (TP78)
 
+      <h1>VueJS test</h1>
+</header>
     <main>
       <slot></slot>
     </main>
