@@ -1,7 +1,7 @@
 <template>
   <div>
     <header>
-      <h1>VueJS (TP6)</h1>
+      <h1>VueJS (TPGitDick8)</h1>
     </header>
 
     <main>
