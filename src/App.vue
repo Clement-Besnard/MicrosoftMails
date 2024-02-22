@@ -1,6 +1,6 @@
 <template>
-  <BaseLayout>
-    <RouterView :username="username" @set-username="setUsername" />
+  <BaseLayout :username="username" @set-username="setUsername" >
+    <RouterView/>
   </BaseLayout>
 </template>
 
@@ -25,10 +25,6 @@ export default {
   },
 };
 </script>
-
-
-
-
 
 
 <style>
