@@ -46,6 +46,10 @@ export default {
       console.log("Navigating to the home page");
     },
     goMail() {
+      if (!this.username) {
+        alert("Vous devez être connecté pour accéder à la page des e-mails.");
+        return;
+      }
       this.$router.push('/mails');
       console.log("Navigating to the mail page");
     },
