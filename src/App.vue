@@ -1,5 +1,6 @@
 <template>
   <BaseLayout>
+    <RouterView></RouterView>
   </BaseLayout>
 </template>
 
