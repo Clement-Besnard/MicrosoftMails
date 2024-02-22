@@ -1,16 +1,16 @@
 <template>
-    <button
-      :class="buttonClasses"
-      @mouseover="isHovered = true"
-      @mouseout="isHovered = false"
-      @focus="isFocused = true"
-      @blur="isFocused = false"
-    >
-      <slot></slot>
-    </button>
-  </template>
-  
-  <script>
+  <button
+    :class="buttonClasses"
+    @mouseover="isHovered = true"
+    @mouseout="isHovered = false"
+    @focus="isFocused = true"
+    @blur="isFocused = false"
+  >
+    <slot></slot>
+  </button>
+</template>
+
+<script>
 export default {
   name: 'BaseButton',
   props: {
@@ -62,11 +62,11 @@ export default {
       if (this.disabled) {
         if (this.color === 'primary') {
           classes.push('base-button--disabled-primary');
-        } else if(this.color === 'warn'){
-            classes.push('base-button--disabled-warn');
-        }else if(this.color === 'danger'){
-            classes.push('base-button--disabled-danger');
-        }else{
+        } else if (this.color === 'warn') {
+          classes.push('base-button--disabled-warn');
+        } else if (this.color === 'danger') {
+          classes.push('base-button--disabled-danger');
+        } else {
           classes.push('base-button--disabled');
         }
       }
@@ -104,7 +104,7 @@ export default {
 }
 
 .base-button--primary {
-    background-color: rgb(26, 162, 192);
+    background-color: blue; /* Changer la couleur à bleu */
     color: white;
 }
 
@@ -114,24 +114,23 @@ export default {
 }
 
 .base-button--danger {
-  background-color: rgb(48, 124, 41);
+  background-color: rgb(0, 131, 48);
   color: white;
 }
 
 .base-button--disabled {
-
   color: white;
   cursor: not-allowed;
 }
 
 .base-button--disabled-primary {
-  background-color: rgb(85, 139, 151);
+  background-color: rgb(0, 97, 29);
   color: white;
   cursor: not-allowed;
 }
 
 .base-button--hovered-primary {
-  background-color: rgb(28, 141, 167);
+  background-color: rgb(10, 199, 241);
 }
 
 .base-button--hovered-warn {
@@ -143,6 +142,7 @@ export default {
   color: white;
   cursor: not-allowed;
 }
+
 .base-button--hovered-danger {
   background-color: rgb(212, 0, 0);
 }

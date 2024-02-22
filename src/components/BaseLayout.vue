@@ -2,6 +2,21 @@
   <div class="page-container">
     <header class="green-header">
       <div class="header-container">
+        <div class="buttons-container">
+          <h1>VueJS</h1>
+          
+          <BaseButton @click="goHome" color="primary">Home</BaseButton>
+          <BaseButton @click="goMail" color="primary">Mail</BaseButton>
+          <BaseButton @click="logout" color="primary">Déconnexion</BaseButton>
+        </div>
+        
+        <div>
+          
+          <span class='username' v-if="username">{{ username }}</span>
+          <span v-else>
+            <SigninButton @signin-success="onSignInSuccess" />
+          </span>
+        </div>
         <h1>VueJS Test Bob</h1>
         <span class='username' v-if="username">{{ username }}</span>
         <span v-else>
@@ -21,17 +36,32 @@
 
 <script>
 import SigninButton from "@/components/SigninButton.vue";
+import BaseButton from "@/components/BaseButton.vue";
 
 export default {
   name: "BaseLayout",
   components: {
     SigninButton,
+    BaseButton,
   },
   props: ['username'],
   methods: {
     onSignInSuccess(username) {
       this.$emit('set-username', username);
-    }
+    },
+    goHome() {
+      // Logic for navigating to the home page
+      console.log("Navigating to the home page");
+    },
+    goMail() {
+      // Logic for navigating to the mail page
+      console.log("Navigating to the mail page");
+    },
+    logout() {
+      // Logic for user logout
+      console.log("User logout");
+      // You can add further logic here, such as clearing tokens or redirecting
+    },
   },
 };
 </script>
