@@ -45,11 +45,7 @@ export default {
       this.$router.push('/');
       console.log("Navigating to the home page");
     },
-    goMail() {
-      
-      this.$router.push('/mails');
-      console.log("Navigating to the mail page");
-    },
+    
     logout() {
       this.$emit('set-username', null);
       console.log("User logout");
