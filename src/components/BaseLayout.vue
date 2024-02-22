@@ -2,7 +2,7 @@
   <div>
     <header class="green-header">
       <div class="header-container">
-        <h1>VueJS test bob</h1>
+        <h1>VueJS</h1>
         <span class='username' v-if="username">{{ username }}</span>
         <span v-else>
           <SigninButton @signin-success="onSignInSuccess" />

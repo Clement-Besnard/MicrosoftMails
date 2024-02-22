@@ -114,7 +114,7 @@ export default {
 }
 
 .base-button--danger {
-  background-color: rgb(48, 124, 41);
+  background-color: rgb(0, 131, 48);
   color: white;
 }
 
@@ -125,7 +125,7 @@ export default {
 }
 
 .base-button--disabled-primary {
-  background-color: rgb(85, 139, 151);
+  background-color: rgb(70, 177, 244);
   color: white;
   cursor: not-allowed;
 }
