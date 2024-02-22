@@ -1,3 +1,3 @@
 <template>
-<h1><center>HOME PAGE</center></h1>
+<h1><center></center></h1>
 </template>
