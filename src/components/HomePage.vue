@@ -23,5 +23,8 @@ export default {
       this.$emit('set-username', username);
     }
   },
+  mounted() {
+    console.log('HomePage mounted. Username:', this.username);
+  },
 };
 </script>

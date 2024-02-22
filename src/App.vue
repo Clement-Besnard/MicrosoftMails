@@ -1,6 +1,6 @@
 <template>
   <BaseLayout>
-    <RouterView></RouterView>
+    <RouterView :username="username" @set-username="setUsername" />
   </BaseLayout>
 </template>
 
@@ -10,7 +10,7 @@ import BaseLayout from "@/components/BaseLayout.vue";
 export default {
   name: "App",
   components: {
-    BaseLayout, 
+    BaseLayout
   },
   data() {
     return {
@@ -20,10 +20,12 @@ export default {
   methods: {
     setUsername(username) {
       this.username = username;
+      console.log('Username updated:', this.username);
     },
   },
 };
 </script>
+
 
 
 

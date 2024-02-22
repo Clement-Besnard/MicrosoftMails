@@ -1,7 +1,5 @@
 <template>
     <div>
-      <h1>Auth Callback Page</h1>
-      <p>Loading...</p>
     </div>
   </template>
   
@@ -44,11 +42,14 @@
           const username = userInfoResponse.data.name;
           console.log('Seems to work, username :')
           console.log(username)
+
+          // Emettre un événement avec le nom d'utilisateur
+          this.$root.setUsername(username);
   
           // Stocker le nom d'utilisateur localement (par exemple, dans le stockage local ou dans l'état de votre application Vue.js)
           // Par exemple :
           localStorage.setItem('username', username);
-  
+
           // Rediriger l'utilisateur vers la page principale ou toute autre page appropriée
           this.$router.push('/');
         } catch (error) {
