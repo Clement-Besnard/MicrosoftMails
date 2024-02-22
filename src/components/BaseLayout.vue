@@ -7,7 +7,6 @@
           
           <BaseButton @click="goHome" color="primary">Home</BaseButton>
           <BaseButton @click="goMail" color="primary">Mail</BaseButton>
-          <BaseButton @click="logout" color="primary">Déconnexion</BaseButton>
         </div>
         <div>
           <span class='username' v-if="username">{{ username }}</span>
