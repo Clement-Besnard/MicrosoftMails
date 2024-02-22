@@ -1,4 +1,5 @@
 <template>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <BaseLayout :username="username" @set-username="setUsername" >
     <RouterView></RouterView>
   </BaseLayout>
@@ -22,11 +23,24 @@ export default {
       console.log('Username updated:', this.username);
     },
   },
+  mounted() {
+    // Vérifier s'il existe des informations d'identification dans le stockage local
+    const accessToken = localStorage.getItem('accessToken');
+    const username = localStorage.getItem('username');
+    if (accessToken && username) {
+      // Utiliser les informations d'identification pour authentifier automatiquement l'utilisateur
+      this.username = username;
+    }
+  },
 };
 </script>
 
 <style>
-
+body {
+  margin: 0;
+  background-color: #2c3e50;
+  color: #ffffff;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -34,86 +48,4 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
-
-/* Styles pour la page entière */
-.page-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background-color: #f0f0f0; /* Couleur de fond de la page */
-}
-
-/* Styles pour l'en-tête */
-.green-header {
-  background-color: #4CAF50;
-  color: #fff;
-  padding: 15px 0;
-  text-align: center;
-}
-
-.header-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header-container h1 {
-  margin: 0;
-  font-size: 24px;
-}
-
-.username {
-  font-weight: bold;
-}
-
-/* Styles pour le contenu principal */
-.main-content {
-  flex: 1;
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 0 20px;
-}
-
-.add-email-button {
-  background-color: #4CAF50;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
-  margin-bottom: 20px;
-}
-
-.add-email-button:hover {
-  background-color: #45a049;
-}
-
-.delete-email-button {
-  background-color: #ff0000;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  border-radius: 3px;
-}
-
-.delete-email-button:hover {
-  background-color: #cc0000;
-}
-
-/* Styles pour le pied de page */
-.footer {
-  background-color: #333;
-  color: #fff;
-  padding: 15px 0;
-  text-align: center;
-  margin-top: auto;
-}
-
-.footer-text {
-  margin: 0;
-}
-
 </style>

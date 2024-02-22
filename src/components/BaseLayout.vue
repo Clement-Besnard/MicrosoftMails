@@ -3,13 +3,13 @@
     <header class="green-header">
       <div class="header-container">
         <div class="buttons-container">
-          <h1>VueJS</h1>
-          
           <BaseButton @click="goHome" color="primary">Home</BaseButton>
           <BaseButton @click="goMail" color="primary">Mail</BaseButton>
         </div>
+        <h1>MicrosoftMails</h1>
         <div>
-          <span class='username' v-if="username">{{ username }}</span>
+          <span class='username' v-if="username" style="font-size: 20px;">{{ username }}<a @click="logout" style="padding-left: 15px;"><span class="glyphicon glyphicon-log-out"></span></a>
+          </span>
           <span v-else>
             <SigninButton @signin-success="onSignInSuccess" />
           </span>
@@ -50,8 +50,11 @@ export default {
       console.log("Navigating to the mail page");
     },
     logout() {
-      // Logic for user logout
+      this.$emit('set-username', null);
       console.log("User logout");
+      localStorage.removeItem('accessToken');
+      localStorage.removeItem('username');
+      window.location.reload();
       // You can add further logic here, such as clearing tokens or redirecting
     },
   },
@@ -59,10 +62,12 @@ export default {
 </script>
 
 <style>
-/* Styles for the entire page */
+/* Styles pour la page entière */
 .page-container {
-  background-color: #f2f2f2; /* Couleur d'arrière-plan */
-  min-height: 100vh; /* Hauteur minimale de la page pour remplir l'écran */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f0f0f0; /* Couleur de fond de la page */
 }
 
 /* Styles for header */
@@ -97,12 +102,13 @@ export default {
   padding: 0 20px;
 }
 
-/* Styles for footer */
+/* Styles pour le pied de page */
 .footer {
   background-color: #333;
   color: #fff;
   padding: 15px 0;
   text-align: center;
+  margin-top: auto;
 }
 
 .footer-text {
