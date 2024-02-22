@@ -8,7 +8,7 @@
     </main>
 
     <footer>
-      <p>Copyright © 2023 My App</p>
+      <p style="color: #ffffff; ">Copyright © 2023 My App</p>
     </footer>
   </div>
 </template>

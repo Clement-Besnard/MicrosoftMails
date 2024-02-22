@@ -42,6 +42,8 @@
   
           // Récupérer le nom d'utilisateur depuis les informations de l'utilisateur
           const username = userInfoResponse.data.name;
+          console.log('Seems to work, username :')
+          console.log(username)
   
           // Stocker le nom d'utilisateur localement (par exemple, dans le stockage local ou dans l'état de votre application Vue.js)
           // Par exemple :

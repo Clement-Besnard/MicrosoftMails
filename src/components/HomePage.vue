@@ -21,10 +21,6 @@ export default {
   methods: {
     onSignInSuccess(username) {
       this.$emit('set-username', username);
-    },
-    loginWithGoogle() {
-      // Rediriger vers la page de connexion Google
-      window.location.href = "/auth/google"; // À remplacer par l'URL de votre backend pour l'authentification Google
     }
   },
 };

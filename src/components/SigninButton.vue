@@ -30,7 +30,7 @@ export default {
     },
     loginWithGoogle() {
       // Construire l'URL d'authentification Google avec votre clé API
-      const googleAuthUrl = `https://accounts.google.com/o/oauth2/v2/auth?response_type=code&scope=email%20profile&redirect_uri=http://localhost:8080&client_id=485993413140-jpvf1sp7nc2ch6engfpbkq3v58e4li60.apps.googleusercontent.com`;
+      const googleAuthUrl = `https://accounts.google.com/o/oauth2/v2/auth?response_type=code&scope=email%20profile&redirect_uri=http://localhost:8080/auth/callback&client_id=485993413140-jpvf1sp7nc2ch6engfpbkq3v58e4li60.apps.googleusercontent.com`;
       
       // Rediriger vers l'URL d'authentification Google
       window.location.href = googleAuthUrl;

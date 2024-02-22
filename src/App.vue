@@ -1,18 +1,15 @@
 <template>
   <BaseLayout>
-    <HomePage :username="username" @set-username="setUsername" />
   </BaseLayout>
 </template>
 
 <script>
 import BaseLayout from "@/components/BaseLayout.vue";
-import HomePage from "@/components/HomePage.vue";
 
 export default {
   name: "App",
   components: {
-    BaseLayout,
-    HomePage,
+    BaseLayout, 
   },
   data() {
     return {
@@ -34,6 +31,8 @@ export default {
 <style>
 body {
   margin: 0;
+  background-color: #2c3e50;
+  color: #ffffff;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
