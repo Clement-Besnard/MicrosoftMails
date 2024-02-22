@@ -1,67 +1,25 @@
 <template>
-  <div class="page-container">
-    <header class="green-header">
-      <div class="header-container">
-        <h1>VueJS Test Bob</h1>
-        <span class='username' v-if="loggedInUsername">{{ loggedInUsername }}</span>
-        <span v-else>
-          <SigninButton @signin-success="onSignInSuccess" />
-        </span>
-      </div>
-    </header>
-    <main class="main-content">
-      <div>
-        <input type="text" v-model="newEmail" placeholder="Entrez un email">
-        <button @click="ajouterEmail" class="add-email-button">Ajouter Email</button>
-        <ul>
-          <li v-for="email in emails" :key="email">
-            {{ email }}
-            <button @click="supprimerEmail(email)" class="delete-email-button">Supprimer</button>
-          </li>
-        </ul>
-      </div>
-    </main>
-
-    <footer class="footer">
-      <p class="footer-text">Copyright © 2023 My App</p>
-    </footer>
-  </div>
+  <BaseLayout :username="username" @set-username="setUsername" >
+    <RouterView></RouterView>
+  </BaseLayout>
 </template>
 
 <script>
-import SigninButton from "@/components/SigninButton.vue";
-
+import BaseLayout from "@/components/BaseLayout.vue";
 export default {
-  name: "BaseLayout",
+  name: "App",
   components: {
-    SigninButton,
+    BaseLayout
   },
-  props: ['username'],
   data() {
     return {
-      newEmail: '',
-      emails: [],
-      loggedInUsername: null, // Nouvelle variable locale pour stocker le nom d'utilisateur connecté
+      username: null,
     };
   },
   methods: {
     setUsername(username) {
-      this.loggedInUsername = username; // Utiliser la variable locale pour stocker le nom d'utilisateur
-      console.log('Username updated:', this.loggedInUsername);
-    },
-    ajouterEmail() {
-      if (this.newEmail.includes('@') && this.newEmail.includes('.')) {
-        this.emails.push(this.newEmail);
-        this.newEmail = '';
-      } else {
-        alert('Email non valide');
-      }
-    },
-    supprimerEmail(email) {
-      const index = this.emails.indexOf(email);
-      if (index !== -1) {
-        this.emails.splice(index, 1);
-      }
+      this.username = username;
+      console.log('Username updated:', this.username);
     },
   },
 };
