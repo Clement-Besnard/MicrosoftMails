@@ -42,11 +42,11 @@ export default {
       this.$emit('set-username', username);
     },
     goHome() {
-      // Logic for navigating to the home page
+      this.$router.push('/');
       console.log("Navigating to the home page");
     },
     goMail() {
-      // Logic for navigating to the mail page
+      this.$router.push('/mails');
       console.log("Navigating to the mail page");
     },
     logout() {
