@@ -25,9 +25,9 @@ export default {
   },
   mounted() {
     // Vérifier s'il existe des informations d'identification dans le stockage local
-    const accessToken = localStorage.getItem('accessToken');
+    
     const username = localStorage.getItem('username');
-    if (accessToken && username) {
+    if (username) { 
       // Utiliser les informations d'identification pour authentifier automatiquement l'utilisateur
       this.username = username;
     }

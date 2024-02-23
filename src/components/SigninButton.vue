@@ -23,6 +23,7 @@ export default {
         const user = await signInAndGetUser(); // Remplacez cela avec votre fonction de connexion Microsoft
         this.username = user.account.name;
         this.$root.setUsername(this.username);
+        localStorage.setItem('username', this.username);
       } catch (error) {
         console.error(error);
       }
