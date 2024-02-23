@@ -9,8 +9,7 @@
         <ul>
           <li v-for="email in emails" :key="email.destination">
             <div>À : {{ email.destination }}</div>
-            <div>Objet : {{ email.object }}</div>
-            <div>{{ email.message }}</div>
+            <div><button @click="goDetailMail" color="primary">Objet : {{ email.object }}</button></div>
             <button @click="supprimerEmail(email)" class="delete-email-button">Supprimer</button>
           </li>
         </ul>
@@ -37,27 +36,31 @@ export default {
   },
   methods: {
     envoyerEmail() {
-      // Vérifier que le message, l'adresse e-mail de destination et l'objet ne sont pas vides
-      if (this.newEmail.message.trim() === '' || this.newEmail.destination.trim() === '' || this.newEmail.object.trim() === '') {
-        alert('Veuillez saisir un message, une adresse e-mail et un objet.');
-        return;
-      }
+  // Vérifier que le message, l'adresse e-mail de destination et l'objet ne sont pas vides
+  if (this.newEmail.message.trim() === '' || this.newEmail.destination.trim() === '' || this.newEmail.object.trim() === '') {
+    alert('Veuillez saisir un message, une adresse e-mail et un objet.');
+    return;
+  }
+  
+  // Créer un nouvel e-mail avec les données saisies
+  const email = {
+    destination: this.newEmail.destination,
+    object: this.newEmail.object,
+    message: this.newEmail.message,
+  };
 
-      // Créer un nouvel e-mail avec les données saisies
-      const email = {
-        destination: this.newEmail.destination,
-        object: this.newEmail.object,
-        message: this.newEmail.message,
-      };
+  // Ajouter l'e-mail à la liste
+  this.emails.push(email);
 
-      // Ajouter l'e-mail à la liste
-      this.emails.push(email);
+  // Enregistrer les e-mails dans le stockage local
+  localStorage.setItem('emails', JSON.stringify(this.emails));
 
-      // Réinitialiser les champs du nouvel e-mail
-      this.newEmail.destination = '';
-      this.newEmail.object = '';
-      this.newEmail.message = '';
-    },
+  // Réinitialiser les champs du nouvel e-mail
+  this.newEmail.destination = '';
+  this.newEmail.object = '';
+  this.newEmail.message = '';
+},
+
     supprimerEmail(email) {
       // Trouver l'index de l'e-mail dans la liste
       const index = this.emails.findIndex(e => e === email);
@@ -66,6 +69,10 @@ export default {
         this.emails.splice(index, 1);
       }
     },
+    goDetailMail() {
+      this.$router.push('/mails/Detail');
+      console.log("Navigating to the home page");
+      },
   },
 };
 </script>
