@@ -1,11 +1,10 @@
 <template>
-  <div>
-    <h1>HELLO</h1>
+  <div class="page-container">
     <main class="main-content">
       <div>
         <input type="email" v-model="newEmail.destination" placeholder="Entrez une adresse e-mail">
         <input type="text" v-model="newEmail.object" placeholder="Entrez un objet">
-        <input type="text" v-model="newEmail.message" placeholder="Entrez un message">
+        <textarea type="text" v-model="newEmail.message" placeholder="Entrez un message"></textarea>
         <button @click="envoyerEmail" class="send-email-button">Envoyer Email</button>
         <ul>
           <li v-for="email in emails" :key="email.destination">
@@ -17,6 +16,9 @@
         </ul>
       </div>
     </main>
+    <footer class="footer">
+      <p>&copy; 2024 My App</p>
+    </footer>
   </div>
 </template>
 
@@ -69,5 +71,95 @@ export default {
 </script>
 
 <style>
-/* Ajoutez vos styles CSS personnalisés ici */
+/* Styles pour la page entière */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f0f0f0; /* Couleur de fond de la page */
+}
+
+/* Styles pour le contenu principal */
+.main-content {
+  max-width: 600px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Styles pour les champs de saisie */
+input[type="email"],
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Styles pour le bouton d'envoi */
+.send-email-button {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.send-email-button:hover {
+  background-color: #45a049;
+}
+
+/* Styles pour la liste des e-mails */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Styles pour chaque e-mail dans la liste */
+/* Styles pour chaque e-mail dans la liste */
+li {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #fff; /* Couleur de fond */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  transition: box-shadow 0.3s ease; /* Transition pour une animation fluide */
+
+  /* Position relative pour positionner le bouton de suppression */
+  position: relative;
+}
+
+/* Style pour chaque e-mail lorsqu'il est survolé */
+li:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée au survol */
+}
+
+/* Styles pour les boutons de suppression */
+.delete-email-button {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  position: absolute;
+  top: 10px; /* Position par rapport au haut de l'élément li */
+  right: 10px; /* Position par rapport à la droite de l'élément li */
+}
+
+.delete-email-button:hover {
+  background-color: #cc0000;
+}
+
+/* Styles pour le footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 15px 0;
+  text-align: center;
+}
 </style>
