@@ -1,7 +1,11 @@
 # Read Me projet Vue.JS
  `https://github.com/Clement-Besnard/MicrosoftMails`
 
-`
+Clément BESNARD
+
+Mathieu CRESPIN
+
+Abdoul DIAW
 
 
 Ceci sera le read.me concernant notre projet en VueJS consistant à la réalisation d'un système de connection ainsi que d'un répertoire d'adresse mail en utilisant des applications et logiciels externes tels que 'vue'.
