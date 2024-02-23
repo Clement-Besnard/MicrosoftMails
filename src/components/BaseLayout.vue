@@ -41,6 +41,15 @@ export default {
     onSignInSuccess(username) {
       this.$emit('set-username', username);
     },
+    goMail() {
+      if (!this.username) {
+        alert("Vous devez être connecté à la page des e-mails.");
+        return;
+      }
+      this.$router.push('/mails');
+      console.log("Navigating to the mail page");
+    },
+
     goHome() {
       this.$router.push('/');
       console.log("Navigating to the home page");
@@ -52,22 +61,21 @@ export default {
       localStorage.removeItem('accessToken');
       localStorage.removeItem('username');
       window.location.reload();
-      // You can add further logic here, such as clearing tokens or redirecting
+      
     },
   },
 };
 </script>
 
 <style>
-/* Styles pour la page entière */
+
 .page-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #f0f0f0; /* Couleur de fond de la page */
+  background-color: #f0f0f0; 
 }
 
-/* Styles for header */
 .green-header {
   background-color: #4CAF50;
   color: #fff;
@@ -92,14 +100,13 @@ export default {
   font-weight: bold;
 }
 
-/* Styles for main content */
 .main-content {
   max-width: 1200px;
   margin: 20px auto;
   padding: 0 20px;
 }
 
-/* Styles pour le pied de page */
+
 .footer {
   background-color: #333;
   color: #fff;
