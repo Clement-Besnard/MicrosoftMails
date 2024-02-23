@@ -25,6 +25,5 @@ export default {
   </script>
   
   <style>
-  /* Styles pour la page de détail du mail */
   </style>
   

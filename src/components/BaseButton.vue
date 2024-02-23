@@ -89,7 +89,7 @@ export default {
 
 <style scoped>
 .base-button {
-  background-color: rgb(26, 162, 192);
+  background-color: rgb(4, 113, 7);
   color: white;
   border: none;
   padding: 10px 15px;
@@ -104,7 +104,7 @@ export default {
 }
 
 .base-button--primary {
-    background-color: blue; /* Changer la couleur à bleu */
+    background-color: blue; 
     color: white;
 }
 
@@ -130,7 +130,7 @@ export default {
 }
 
 .base-button--hovered-primary {
-  background-color: rgb(10, 199, 241);
+  background-color: rgb(0, 95, 16);
 }
 
 .base-button--hovered-warn {
@@ -154,6 +154,6 @@ export default {
 }
 
 .base-button--focused {
-  box-shadow: 0 0 2px 1px lightgreen;
+  box-shadow: 0 0 2px 1px rgb(0, 107, 0);
 }
 </style>

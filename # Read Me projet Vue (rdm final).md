@@ -1,6 +1,10 @@
 # Read Me projet Vue.JS
+ `https://github.com/Clement-Besnard/MicrosoftMails`
 
-Ceci sera le read me concernant notre projet en VueJS consistant à la réalisation d'un système de connection ainsi que d'un répertoire d'adresse mail en utilisant des applications et logiciels externes tels que 'vue'.
+`
+
+
+Ceci sera le read.me concernant notre projet en VueJS consistant à la réalisation d'un système de connection ainsi que d'un répertoire d'adresse mail en utilisant des applications et logiciels externes tels que 'vue'.
 
 ## Prérequis pour le bon fonctionnement du site:
 
@@ -37,5 +41,9 @@ Ceci vous lancera vôtre localhost, vous permettant d'avoir un aperçu de vôtre
 
 - Il y a deux moyens de se connecter, soit par Google, soit par Microsoft (les deux utilisent leur authentificator respectifs). Une fois connecté, vôtre nom sera affiché en haut à droite de vôtre écran, juste à côté du bouton déconnexion.
 
+- Les authentificateurs Microsoft et Google permettent de récupérer et de stocker les informations d'utilisateur, le composant goMail permet d'afficher le nom de l'utilisateur connecté.
+
 - Une fois connecté, vous pourrez accéder au bouton Mail et rentrer des informations qui peuvent être stockée et/ou suprrimée (si vous n'êtes pas connecté, le local vous rendra le message erreur 'Vous devez être connecté').
+
+- 
 

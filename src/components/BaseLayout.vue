@@ -68,13 +68,20 @@ export default {
 
 <style>
 
+/* Global styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+
 .page-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   background-color: #f0f0f0; 
 }
-
 .green-header {
   background-color: #4CAF50;
   color: #fff;
@@ -95,10 +102,31 @@ export default {
   font-size: 24px;
 }
 
-.username {
-  font-weight: bold;
+.buttons-container {
+  display: flex;
 }
 
+.buttons-container BaseButton {
+  margin-right: 10px;
+}
+
+.username {
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.username a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+.username a:hover {
+  text-decoration: underline;
+}
 .main-content {
   max-width: 1200px;
   margin: 20px auto;
