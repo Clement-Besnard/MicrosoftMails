@@ -5,7 +5,7 @@
         <div v-for="email in emails" :key="email.destination">
           <div>À : {{ email.destination }}</div>
           <div>Objet : {{ email.object }}</div>
-          <div>{{ email.message }}</div>
+          <div>Message :{{ email.message }}</div>
         </div>
       </div>
     </div>
